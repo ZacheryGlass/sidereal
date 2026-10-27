@@ -1,0 +1,56 @@
+name: Bug report
+description: Something in Sidereal doesn't work as it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a repository with ...
+        2. Right-click ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: sidereal
+    attributes:
+      label: Sidereal version
+      description: Extensions view, Sidereal, the version next to its name.
+      placeholder: "1.2.0"
+    validations:
+      required: true
+  - type: input
+    id: editor
+    attributes:
+      label: Editor and version
+      description: Help, About. VS Code, VSCodium, Cursor, Windsurf or another.
+      placeholder: "VS Code 1.105.1"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 15.6, Windows 11, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: input
+    id: git
+    attributes:
+      label: Git version
+      description: The output of `git --version`.
+      placeholder: "git version 2.50.1"
+  - type: textarea
+    id: log
+    attributes:
+      label: Sidereal log
+      description: View, Output, then pick "Sidereal" in the dropdown. Paste the lines around the problem. Remove anything private.
+      render: text

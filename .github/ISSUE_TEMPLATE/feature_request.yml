@@ -1,0 +1,23 @@
+name: Feature request
+description: Something Sidereal should do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you want to do
+      description: The task you are trying to get done, and where Sidereal gets in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: How it could work
+      description: Optional. If another tool (TortoiseGit, Git Graph, GitLens, a Git command) does this well, say which and how.
+  - type: checkboxes
+    id: search
+    attributes:
+      label: Checked
+      options:
+        - label: I searched the open issues for this request.
+          required: true

@@ -1,0 +1,42 @@
+# Changelog
+
+## Unreleased
+
+- Issue linking rules are now settings (`sidereal.issueLinking.rules`) in user, workspace or folder scope, so a team can share them in `.vscode/settings.json`. A repository can have several rules, each with an optional section regex.
+- `sidereal.issueLinking.tortoiseGitSettings` (Ask, Always, Never) decides whether TortoiseGit's bugtraq settings apply. The bugtraq regex is derived from `bugtraq.message` when `bugtraq.logregex` is unset.
+- The More Actions menu's issue linking items are now one **Issue Linking...** picker that shows which rules apply and where they come from.
+- The quick filter is hidden while the filter bar is open, and text typed into it carries over to the bar.
+- Fixed: a worktree removed through VS Code's Git extension stayed listed in the References view, the Repo dropdown and its tab.
+- Fixed: **Prune Worktrees...** missed worktrees whose folders had just been deleted.
+- Fixed: after a restart, showing a reference could open a second tab for a repository whose restored tab VS Code had not revived yet.
+
+## 1.1.0 - 2026-10-26
+
+- One editor tab per repository, restored after a restart. **Open Repository in New Tab** is on the Repo dropdown, the side bar and the Command Palette.
+- Tabs are titled by how their repository relates to the workspace: `app`, `app › lib` (submodule), `app [feature]` (linked worktree), `tool (external)`.
+- **Add Git Repository...** accepts a repository outside the workspace.
+- **Open Worktree in Current Window** and **Migrate Worktree Changes...**.
+- Worktrees are added and removed through VS Code's Git extension when it has the repository open.
+- The References view shows every group, with a placeholder when one is empty.
+
+## 1.0.2 - 2026-10-26
+
+- The graph opens in an editor tab by default. Set **Sidereal: Open In** to **Panel** to use the bottom panel.
+- Double-click no longer checks out a branch or opens a worktree. Use the right-click menu.
+
+## 1.0.1 - 2026-10-26
+
+- Restored the TortoiseGit colors of the reference chips.
+
+## 1.0.0 - 2026-10-26
+
+First Marketplace release.
+
+- Commit graph in an editor tab or the bottom panel. Commits stream in as `git log` runs, and only the visible rows are rendered.
+- Commit details beside or below the list: changed files, diffs, file history, blame and patches.
+- Git actions through VS Code's own prompts: checkout, branch, merge, rebase (including interactive), cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch.
+- Filters by message, author, path, SHA, refs, date range and revision range.
+- Worktrees: other worktrees' branches and detached commits are marked in the graph, and worktrees can be created from the branch and commit menus.
+- Submodules nested under their parent repository, with pointer changes shown in commit details and an inline **Update** for out-of-date submodules.
+- The References side bar lists branches, remotes, tags, stashes, worktrees and submodules.
+- Colors follow the VS Code theme.
