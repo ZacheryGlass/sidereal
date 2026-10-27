@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0 - 2026-10-27
+
+- Sidereal is also published to [Open VSX](https://open-vsx.org/extension/zglass/sidereal), and is tested in VSCodium.
+- After the 10th time a graph opens, one message asks whether you'd rate Sidereal: **Rate** opens the Marketplace's review section, **Report an Issue** the issue tracker, and **Don't Ask Again** closes it. It never shows again, whatever the answer.
+- The Marketplace listing is now **Sidereal: Git Graph, Log & Worktrees**, with screenshots and links to the public [issue tracker](https://github.com/ZacheryGlass/sidereal/issues), [discussions](https://github.com/ZacheryGlass/sidereal/discussions) and changelog.
+
 ## 1.2.0 - 2026-10-27
 
 - Issue linking rules are now settings (`sidereal.issueLinking.rules`) in user, workspace or folder scope, so a team can share them in `.vscode/settings.json`. A repository can have several rules, each with an optional section regex.
