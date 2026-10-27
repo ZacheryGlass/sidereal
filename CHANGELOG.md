@@ -1,11 +1,20 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 - 2026-10-27
 
 - Issue linking rules are now settings (`sidereal.issueLinking.rules`) in user, workspace or folder scope, so a team can share them in `.vscode/settings.json`. A repository can have several rules, each with an optional section regex.
-- `sidereal.issueLinking.tortoiseGitSettings` (Ask, Always, Never) decides whether TortoiseGit's bugtraq settings apply. The bugtraq regex is derived from `bugtraq.message` when `bugtraq.logregex` is unset.
+- `sidereal.issueLinking.tortoiseGitSettings` (Ask, Always, Never) decides whether TortoiseGit's bugtraq settings apply. The bugtraq regex is derived from `bugtraq.message` when `bugtraq.logregex` is unset, and each of several comma-separated bug IDs becomes a link, as in TortoiseGit.
 - The More Actions menu's issue linking items are now one **Issue Linking...** picker that shows which rules apply and where they come from.
+- The commit table's header row stays in view while scrolling.
+- **Open Git Log (Sidereal)** in the Explorer's folder context menu opens that folder's repository in a tab.
+- **Remove Repository** is in the context menu of a repository in the side bar.
 - The quick filter is hidden while the filter bar is open, and text typed into it carries over to the bar.
+- A graph line moving to a freed column now steps between rows, instead of running along another commit's row.
+- Fixed: a merge into a commit that a line turned into from the right could be drawn twice, with a stray line down to the last loaded row.
+- Fixed: removing a branch from the Branches dropdown selection could fail to load the graph in a repository with many branches (the command line was too long).
+- Fixed: **Add Rule to the Workspace Settings** wrote a folder's settings in a multi-root workspace.
+- Fixed: switching a tab to another repository could briefly switch it back, and a tab moved to another window stopped following repository switches.
+- Fixed: **Open Worktree in Sidereal Tab** and **View File History** could open no tab when VS Code's Git extension opened the repository at the same moment.
 - Fixed: a worktree removed through VS Code's Git extension stayed listed in the References view, the Repo dropdown and its tab.
 - Fixed: **Prune Worktrees...** missed worktrees whose folders had just been deleted.
 - Fixed: after a restart, showing a reference could open a second tab for a repository whose restored tab VS Code had not revived yet.
