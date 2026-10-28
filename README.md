@@ -42,6 +42,7 @@ Filters by path, author, message, date, revision range, SHA and refs:
 
 - **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the header row stays in view while scrolling, and runs of commits can be collapsed.
 - **Commit details** beside or below the list: changed files, diffs, file history, blame, git notes and `git describe`.
+- **Commit form** for the working tree changes: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
 - **Git actions** through VS Code's own prompts: checkout, branch, merge, rebase (including interactive), cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away.
 - **Filters**: path, author, message, SHA, refs, date range and revision range, plus first-parent, no-merges, follow-renames and a compressed graph. Jump between merges.
 - **Worktrees**: see which branches other worktrees have checked out, create a worktree from any branch or commit, open it in a new window, the current window or its own Sidereal tab, and move uncommitted changes between worktrees.
@@ -114,7 +115,7 @@ Open the filter bar (the funnel button) and enter paths such as `src/` or `READM
 VS Code 1.74 or later and Git 2.33 or later.
 
 **Does Sidereal work in VSCodium?**
-Yes. Install it from [Open VSX](https://open-vsx.org/extension/zglass/sidereal), where VSCodium finds its extensions. Each release is checked in VSCodium: the graph, commit details and diffs, filters, the context menus, worktrees and submodules.
+Yes. Publishing to [Open VSX](https://open-vsx.org/extension/zglass/sidereal), where VSCodium finds its extensions, is pending; until then, install the VSIX from the [releases](https://github.com/ZacheryGlass/sidereal/releases) page with **Extensions: Install from VSIX...**. Each release is checked in VSCodium: the graph, commit details and diffs, filters, the context menus, worktrees and submodules.
 
 ## Getting started
 

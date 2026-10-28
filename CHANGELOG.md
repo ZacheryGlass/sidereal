@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.0 - 2026-10-28
+
+- **Commit...** opens a commit form in Sidereal instead of git's `COMMIT_EDITMSG` file. It has a summary and description, staged and unstaged files you can stage or unstage one by one or all at once, **Amend Last Commit** and **Add Signed-off-by**, and **Commit** or **Commit & Push** (Ctrl/Cmd+Enter commits). A failing commit hook shows its output.
+- The Branches dropdown has a **Current Branch** option below **Show All**. It shows the history of whatever is checked out, and follows a checkout or a detached HEAD.
+- The working tree changes open much faster when many files changed: the files show right away and their line counts follow, a long file list renders only the rows in view, and a refresh that changed nothing no longer redraws the details.
+- The **Working tree changes** row is always shown, with how many files changed, e.g. "Working tree changes (3 files)". Its change actions show once there are changes.
+- A divider separates the Graph and Actions column headers.
+- Clipboard menu items say **Copy ... to Clipboard**, e.g. **Copy Branch Name to Clipboard**.
+
 ## 1.3.0 - 2026-10-27
 
 - Sidereal is also published to [Open VSX](https://open-vsx.org/extension/zglass/sidereal), and is tested in VSCodium.
