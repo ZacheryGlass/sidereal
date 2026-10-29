@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 - 2026-10-29
+
+- **Collapse Runs of Commits** in the footer's **View** menu is now on by default.
+- The **Launch External Directory Diff** button in the commit details is always shown. If Git has no diff tool set up, clicking it lists the tools installed on your computer and saves the one you pick to your global Git config (`diff.guitool`, or `diff.tool` for a terminal tool). **Sidereal: Configure External Diff Tool** in the Command Palette does the same.
+- **Launch External Directory Diff** works on a repository's first commit.
+- The **Working tree changes** open at once: Sidereal loads them in the background after the graph loads, then checks them again as they open.
+
 ## 1.4.0 - 2026-10-28
 
 - **Commit...** opens a commit form in Sidereal instead of git's `COMMIT_EDITMSG` file. It has a summary and description, staged and unstaged files you can stage or unstage one by one or all at once, **Amend Last Commit** and **Add Signed-off-by**, and **Commit** or **Commit & Push** (Ctrl/Cmd+Enter commits). A failing commit hook shows its output.
