@@ -115,7 +115,7 @@ Open the filter bar (the funnel button) and enter paths such as `src/` or `READM
 VS Code 1.74 or later and Git 2.33 or later.
 
 **Does Sidereal work in VSCodium?**
-Yes. Publishing to [Open VSX](https://open-vsx.org/extension/zglass/sidereal), where VSCodium finds its extensions, is pending; until then, install the VSIX from the [releases](https://github.com/ZacheryGlass/sidereal/releases) page with **Extensions: Install from VSIX...**. Each release is checked in VSCodium: the graph, commit details and diffs, filters, the context menus, worktrees and submodules.
+Yes. Install it from [Open VSX](https://open-vsx.org/extension/zglass/sidereal), where VSCodium finds its extensions. Each release is checked in VSCodium: the graph, commit details and diffs, filters, the context menus, worktrees and submodules.
 
 ## Getting started
 
