@@ -1,6 +1,6 @@
 {
-	"date": "2026-10-27",
-	"sidereal": "1.2.0",
+	"date": "2026-10-29",
+	"sidereal": "1.5.0",
 	"vscode": "1.140.0",
 	"git": "2.50.1 (Apple Git-155)",
 	"machine": "Apple M5, 16 GB, macOS 26.5.1",
@@ -11,30 +11,30 @@
 	},
 	"method": "Times from confirming \"Sidereal: Open Sidereal View\" in the Command Palette: firstPaint until the first commit rows are in the graph, firstBatch until the first batch is loaded and laid out, allCommits until Load More has loaded every commit. Three runs in one VS Code session.",
 	"median": {
-		"firstPaintMs": 975,
-		"firstBatchMs": 980,
-		"allCommitsMs": 18441
+		"firstPaintMs": 477,
+		"firstBatchMs": 479,
+		"allCommitsMs": 8264
 	},
 	"runs": [
 		{
-			"firstPaintMs": 1181,
-			"firstBatchMs": 1193,
+			"firstPaintMs": 711,
+			"firstBatchMs": 715,
 			"firstBatchCommits": 5002,
-			"allCommitsMs": 18499,
+			"allCommitsMs": 8503,
 			"allCommits": 100002
 		},
 		{
-			"firstPaintMs": 975,
-			"firstBatchMs": 980,
+			"firstPaintMs": 454,
+			"firstBatchMs": 457,
 			"firstBatchCommits": 5002,
-			"allCommitsMs": 18441,
+			"allCommitsMs": 8249,
 			"allCommits": 100002
 		},
 		{
-			"firstPaintMs": 952,
-			"firstBatchMs": 956,
+			"firstPaintMs": 477,
+			"firstBatchMs": 479,
 			"firstBatchCommits": 5002,
-			"allCommitsMs": 18208,
+			"allCommitsMs": 8264,
 			"allCommits": 100002
 		}
 	]
