@@ -12,7 +12,7 @@ A free Git graph, log and file history for VS Code, modeled on TortoiseGit's log
 - **No account.** Nothing to sign in to.
 - **No ads, no telemetry.** Sidereal makes no network requests of its own: the only network traffic comes from the Git commands you start, such as fetch, pull and push.
 - **Maintained.** Fixes and features ship regularly; the [changelog](https://github.com/ZacheryGlass/sidereal/blob/main/CHANGELOG.md) lists every release.
-- **Built for large histories.** Commits stream in as `git log` runs and only the visible rows are drawn. On a 100,000-commit repository the first 5,000 commits show in about a second ([benchmark](https://github.com/ZacheryGlass/sidereal/blob/main/media/benchmark.json)).
+- **Built for large histories.** Commits stream in as `git log` runs and only the visible rows are drawn. On a 100,000-commit repository the first 5,000 commits show in about half a second ([benchmark](https://github.com/ZacheryGlass/sidereal/blob/main/media/benchmark.json)).
 
 ## Screenshots
 
