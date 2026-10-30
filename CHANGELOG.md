@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.6.0 - 2026-10-30
+
+- **Standalone app**: Sidereal also runs without VS Code, as an app for macOS 12 or later, Windows 10 or later and Linux (x64). Download it from the [1.6.0 release](https://github.com/ZacheryGlass/sidereal/releases/tag/v1.6.0). Each repository opens in a tab, diffs open in your diff tool and conflicts in your merge tool; the [README](https://github.com/ZacheryGlass/sidereal#standalone-app) compares it with the extension.
+- **Show Release Notes**, **Open Sidereal on GitHub**, **Report an Issue** and **Rate Sidereal** are in the Command Palette, the References view's **...** menu and the **More Actions** menu.
+- After Sidereal updates to a new minor version (for example 1.5 to 1.6), a message links to its release notes. **Don't Show Again**, or the `sidereal.showReleaseNotes` setting, turns it off.
+- The rating message waits until the graph has opened 10 times on at least 3 different days. In editors that install from Open VSX, such as VSCodium and Cursor, **Rate** opens Open VSX instead of the Marketplace.
+- Staging in the commit form, or running git in a terminal, no longer fails now and then with "index.lock: File exists" while Sidereal refreshes in the background.
+- On Windows, **Launch External Directory Diff** no longer fails with "could not symlink" when comparing the checked-out commit.
+
 ## 1.5.0 - 2026-10-29
 
 - **Collapse Runs of Commits** in the footer's **View** menu is now on by default.
