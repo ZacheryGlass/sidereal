@@ -23,15 +23,15 @@ body:
     id: sidereal
     attributes:
       label: Sidereal version
-      description: Extensions view, Sidereal, the version next to its name.
-      placeholder: "1.2.0"
+      description: Extensions view, Sidereal, the version next to its name. In the standalone app, About Sidereal.
+      placeholder: "1.6.0"
     validations:
       required: true
   - type: input
     id: editor
     attributes:
       label: Editor and version
-      description: Help, About. VS Code, VSCodium, Cursor, Windsurf or another.
+      description: Help, About. VS Code, VSCodium, Cursor, Windsurf or another, or "Standalone app".
       placeholder: "VS Code 1.105.1"
     validations:
       required: true
@@ -52,5 +52,5 @@ body:
     id: log
     attributes:
       label: Sidereal log
-      description: View, Output, then pick "Sidereal" in the dropdown. Paste the lines around the problem. Remove anything private.
+      description: View, Output, then pick "Sidereal" in the dropdown; in the standalone app, Help, Show Log. Paste the lines around the problem. Remove anything private.
       render: text
