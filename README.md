@@ -1,10 +1,10 @@
 # Sidereal: Git Graph, Log & Worktrees
 
-A free Git graph, log and file history for VS Code, modeled on TortoiseGit's log view, with worktrees and submodules built in. No account, no ads, no telemetry.
+A free Git graph, log and file history, modeled on TortoiseGit's log view, with worktrees and submodules built in. Use it in VS Code or as a standalone app for macOS, Windows and Linux. No account, no ads, no telemetry.
 
 ![Opening the graph, scrolling the history, and opening a commit's diff](https://raw.githubusercontent.com/ZacheryGlass/sidereal/main/media/hero.gif)
 
-[Install from the Marketplace](https://marketplace.visualstudio.com/items?itemName=zglass.sidereal) · [Open VSX](https://open-vsx.org/extension/zglass/sidereal) · [Report an issue](https://github.com/ZacheryGlass/sidereal/issues) · [Discussions](https://github.com/ZacheryGlass/sidereal/discussions) · [Changelog](https://github.com/ZacheryGlass/sidereal/blob/main/CHANGELOG.md)
+[Install from the Marketplace](https://marketplace.visualstudio.com/items?itemName=zglass.sidereal) · [Open VSX](https://open-vsx.org/extension/zglass/sidereal) · [Download the app](https://github.com/ZacheryGlass/sidereal/releases/latest) · [Report an issue](https://github.com/ZacheryGlass/sidereal/issues) · [Discussions](https://github.com/ZacheryGlass/sidereal/discussions) · [Changelog](https://github.com/ZacheryGlass/sidereal/blob/main/CHANGELOG.md)
 
 ## Why Sidereal
 
@@ -114,6 +114,9 @@ Open the filter bar (the funnel button) and enter paths such as `src/` or `READM
 **Which versions does Sidereal need?**
 VS Code 1.74 or later and Git 2.33 or later.
 
+**Does Sidereal run without VS Code?**
+Yes. The [standalone app](#standalone-app) runs on macOS, Windows and Linux.
+
 **Does Sidereal work in VSCodium?**
 Yes. Install it from [Open VSX](https://open-vsx.org/extension/zglass/sidereal), where VSCodium finds its extensions. Each release is checked in VSCodium: the graph, commit details and diffs, filters, the context menus, worktrees and submodules.
 
@@ -145,12 +148,12 @@ Run **Sidereal: Open Sidereal View** from the Command Palette, or click a branch
 
 ## Standalone app
 
-Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silicon and Intel) and Windows 10 or later (x64 and Arm). Download it from the [releases](https://github.com/ZacheryGlass/sidereal/releases): the `.dmg` for macOS; for Windows, the `Sidereal-Setup` installer, or a `.zip` to unpack anywhere. It needs Git 2.33 or later installed.
+Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silicon and Intel), Windows 10 or later (x64 and Arm) and Linux (x64). Download it from the [latest release](https://github.com/ZacheryGlass/sidereal/releases/latest): the `.dmg` for macOS; for Windows, the `Sidereal-Setup` installer, or a `.zip` to unpack anywhere; for Linux, the `.AppImage`. It needs Git 2.33 or later installed.
 
 - Each repository opens in a tab: from **File > Open Repository** or **New Tab**, a folder dropped on the window or the app's icon, a submodule or worktree in the graph, or `sidereal [folder]` in a terminal (**File > Install sidereal Command**).
 - Diffs open in your diff tool and conflicts in your merge tool: Git's, or the one chosen in **Settings** (Beyond Compare, FileMerge, Meld and more). With none set, the app asks which of the installed ones to use. Blame and browsing a revision's files are only in the extension.
-- At start, the app asks GitHub whether there is a newer version, and nothing else; **Settings** turns that off. The installed Windows app updates itself; the macOS app and the Windows zip say when a new version is out.
-- An unsigned build is blocked on first launch. On macOS 15 or later, open the app, then choose **Open Anyway** in **System Settings > Privacy & Security**; on earlier versions, right-click the app in Finder and choose **Open**. On Windows, choose **More info > Run anyway**.
+- At start, the app asks GitHub whether there is a newer version, and nothing else; **Settings** turns that off. The installed Windows app and the AppImage update themselves; the macOS app and the Windows zip say when a new version is out.
+- An unsigned build is blocked on first launch. On macOS 15 or later, open the app, then choose **Open Anyway** in **System Settings > Privacy & Security**; on earlier versions, right-click the app in Finder and choose **Open**. On Windows, choose **More info > Run anyway**. On Linux, make the AppImage executable first (`chmod +x Sidereal-*.AppImage`).
 
 ### Extension vs. standalone app
 
@@ -189,8 +192,8 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | Open by dropping a folder, `sidereal [folder]`, or a start screen with recent repositories | ❌ | ✅ | |
 | Follows the theme | ✅ | ✅ | The app follows system light/dark, or the theme set in Settings |
 | Settings | ✅ | ✅ | The app has its own Settings dialog |
-| Automatic updates | ✅ | ✅ | The installed Windows app updates itself from GitHub releases; the macOS app and the Windows zip say when one is out |
-| Linux | ✅ | ❌ | The app runs on macOS 12+ and Windows 10+ |
+| Automatic updates | ✅ | ✅ | The installed Windows app and the AppImage update themselves from GitHub releases; the macOS app and the Windows zip say when one is out |
+| Linux | ✅ | ✅ | The app is an x64 AppImage |
 
 ## About this repository
 
