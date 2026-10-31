@@ -38,12 +38,16 @@ Filters by path, author, message, date, revision range, SHA and refs:
 
 ![The filter bar showing the commits that touched src/render/ since September](https://raw.githubusercontent.com/ZacheryGlass/sidereal/main/media/filters.png)
 
+Drag and drop: rest on a target to preview the result, then choose what to do ([more examples](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)):
+
+![A branch label dragged onto main, previewing the rebase before it runs](https://raw.githubusercontent.com/ZacheryGlass/sidereal/main/media/drag/rebase-branch.gif)
+
 ## Features
 
 - **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the header row stays in view while scrolling, and runs of commits are collapsed by default.
 - **Commit details** beside or below the list: changed files, diffs, file history, blame, git notes and `git describe`.
 - **Commit form** for the working tree changes: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
-- **Git actions** through VS Code's own prompts: checkout, branch, merge, rebase (including interactive), cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away.
+- **Git actions** through VS Code's own prompts: checkout, branch, merge, rebase (including interactive), cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away. Drag a branch label onto a commit or branch to rebase it there, or onto the checked-out branch to merge it; drag commits onto the checked-out branch to cherry-pick them ([see it](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)).
 - **Filters**: path, author, message, SHA, refs, date range and revision range, plus first-parent, no-merges, follow-renames and a compressed graph. Jump between merges.
 - **Worktrees**: see which branches other worktrees have checked out, create a worktree from any branch or commit, open it in a new window, the current window or its own Sidereal tab, and move uncommitted changes between worktrees.
 - **Submodules** nested under their parent repository. A pointer change shows its commit range and opens the submodule's history for it; out-of-date submodules have an inline **Update**.
