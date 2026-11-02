@@ -10,7 +10,7 @@ A free Git graph, log and file history, modeled on TortoiseGit's log view, with 
 
 - **Free.** Every feature, for personal and business use. There is no paid tier.
 - **No account.** Nothing to sign in to.
-- **No ads, no telemetry.** Sidereal makes no network requests of its own: the only network traffic comes from the Git commands you start, such as fetch, pull and push (and the standalone app's check for updates).
+- **No ads, no telemetry.** Sidereal makes no network requests of its own: the only network traffic comes from the Git commands you start, such as fetch, pull and push, the AI agent you choose for **Resolve with AI** (and the standalone app's check for updates).
 - **Maintained.** Fixes and features ship regularly; the [changelog](https://github.com/ZacheryGlass/sidereal/blob/main/CHANGELOG.md) lists every release.
 - **Built for large histories.** Commits stream in as `git log` runs and only the visible rows are drawn. On a 100,000-commit repository the first 5,000 commits show in about half a second ([benchmark](https://github.com/ZacheryGlass/sidereal/blob/main/media/benchmark.json)).
 
@@ -36,7 +36,7 @@ A submodule pointer change opens the submodule's history for exactly that range:
 
 Filters by path, author, message, date, revision range, SHA and refs:
 
-![The filter bar showing the commits that touched src/render/ since September](https://raw.githubusercontent.com/ZacheryGlass/sidereal/main/media/filters.png)
+![The filter panel showing the commits that touched src/render/ since September](https://raw.githubusercontent.com/ZacheryGlass/sidereal/main/media/filters.png)
 
 Drag and drop: rest on a target to preview the result, then choose what to do ([more examples](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)):
 
@@ -47,7 +47,8 @@ Drag and drop: rest on a target to preview the result, then choose what to do ([
 - **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the header row stays in view while scrolling, and runs of commits are collapsed by default.
 - **Commit details** beside or below the list: changed files, diffs, file history, blame, git notes and `git describe`.
 - **Commit form** for the working tree changes: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
-- **Git actions** through VS Code's own prompts: checkout, branch, merge, rebase (including interactive), cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away. Drag a branch label onto a commit or branch to rebase it there, or onto the checked-out branch to merge it; drag commits onto the checked-out branch to cherry-pick them ([see it](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)).
+- **Git actions**: checkout, branch, merge, rebase, cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Merge, rebase, cherry-pick and revert each open a dialog listing the commits they apply, and any rebase can be reordered, reworded or squashed before it runs. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away. Drag a branch label onto a commit or branch to rebase it there, or onto the checked-out branch to merge it; drag commits onto the checked-out branch to cherry-pick them ([see it](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)).
+- **Resolve with AI**: when a merge, rebase or cherry-pick stops on conflicts, hand the files to Claude Code, Codex or GitHub Copilot CLI, whichever you have installed and signed in to. Each file it settles is marked as resolved, and for a rebase it can continue through each later commit to the end.
 - **Filters**: path, author, message, SHA, refs, date range and revision range, plus first-parent, no-merges, follow-renames and a compressed graph. Jump between merges.
 - **Worktrees**: see which branches other worktrees have checked out, create a worktree from any branch or commit, open it in a new window, the current window or its own Sidereal tab, and move uncommitted changes between worktrees.
 - **Submodules** nested under their parent repository. A pointer change shows its commit range and opens the submodule's history for it; out-of-date submodules have an inline **Update**.
@@ -67,7 +68,7 @@ Git Graph's open feature requests that Sidereal already covers:
 
 | Request | Upvotes | Sidereal |
 |---|---|---|
-| [Filter the graph by file or folder (#70)](https://github.com/mhutchie/vscode-git-graph/issues/70) | 78 | **Paths** in the filter bar |
+| [Filter the graph by file or folder (#70)](https://github.com/mhutchie/vscode-git-graph/issues/70) | 78 | **Paths** in the filter panel |
 | [Keep the header visible while scrolling (#132)](https://github.com/mhutchie/vscode-git-graph/issues/132) | 33 | The header row stays in view |
 | [Display git notes (#475)](https://github.com/mhutchie/vscode-git-graph/issues/475) | 19 | Notes in the commit details, and a filter that searches them |
 | [Create and apply patches (#538)](https://github.com/mhutchie/vscode-git-graph/issues/538) | 17 | **Generate Patches** and **Apply Patches...** |
@@ -113,7 +114,7 @@ Sidereal's References side bar lists every worktree, and the graph marks the bra
 Submodules are nested under their parent repository. Clicking a submodule pointer change in a commit's details opens the submodule's history for that range in its own tab.
 
 **How do I filter Git history by folder or file?**
-Open the filter bar (the funnel button) and enter paths such as `src/` or `README.md`. **View File History** on a file in the Explorer does the same for one file.
+Open the filter panel (the funnel button) and enter paths such as `src/` or `README.md`. **View File History** on a file in the Explorer does the same for one file.
 
 **Which versions does Sidereal need?**
 VS Code 1.74 or later and Git 2.33 or later.
@@ -152,11 +153,12 @@ Run **Sidereal: Open Sidereal View** from the Command Palette, or click a branch
 
 ## Standalone app
 
-Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silicon and Intel), Windows 10 or later (x64 and Arm) and Linux (x64). Download it from the [latest release](https://github.com/ZacheryGlass/sidereal/releases/latest): the `.dmg` for macOS; for Windows, the `Sidereal-Setup` installer, or a `.zip` to unpack anywhere; for Linux, the `.AppImage`. It needs Git 2.33 or later installed.
+Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silicon and Intel), Windows 10 or later (x64 and Arm) and Linux (x64). Download it from the [latest release](https://github.com/ZacheryGlass/sidereal/releases/latest): the `.dmg` for macOS, the `Sidereal-Setup` installer for Windows, the `.AppImage` for Linux. It needs Git 2.33 or later installed.
 
-- Each repository opens in a tab: from **File > Open Repository** or **New Tab**, a folder dropped on the window or the app's icon, a submodule or worktree in the graph, or `sidereal [folder]` in a terminal (**File > Install sidereal Command**).
+- Each repository opens in a tab: from **File > Open Repository**, the **New Tab** dialog (the **+** button, with your recent repositories and pinned favorites), a folder dropped on the window or the app's icon, a submodule or worktree in the graph, or `sidereal [folder]` in a terminal (**File > Install sidereal Command**).
+- Right-click a file or folder for **Sidereal > Show Log** or **Fetch**, as in TortoiseGit: in Explorer (added by the installer), the Finder (**File > Install Finder Quick Actions**) or Files and Dolphin on Linux (**File > Install File Manager Menu**). In a terminal, `sidereal --log <path>...` and `sidereal --fetch <path>...` do the same.
 - Diffs open in your diff tool and conflicts in your merge tool: Git's, or the one chosen in **Settings** (Beyond Compare, FileMerge, Meld and more). With none set, the app asks which of the installed ones to use. Blame and browsing a revision's files are only in the extension.
-- At start, the app asks GitHub whether there is a newer version, and nothing else; **Settings** turns that off. The installed Windows app and the AppImage update themselves; the macOS app and the Windows zip say when a new version is out.
+- At start, the app asks GitHub whether there is a newer version, and nothing else; **Settings** turns that off. The Windows app and the AppImage update themselves; the macOS app says when a new version is out.
 - An unsigned build is blocked on first launch. On macOS 15 or later, open the app, then choose **Open Anyway** in **System Settings > Privacy & Security**; on earlier versions, right-click the app in Finder and choose **Open**. On Windows, choose **More info > Run anyway**. On Linux, make the AppImage executable first (`chmod +x Sidereal-*.AppImage`).
 
 ### Extension vs. standalone app
@@ -176,6 +178,7 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | File diffs | ✅ | ✅ | The app opens them in your external diff tool |
 | Open a file at a revision | ✅ | ✅ | The app opens a temporary copy in the file's default app |
 | Conflicted files | ✅ | ✅ | The app opens them in your merge tool |
+| Resolve conflicts with an AI agent (Claude Code, Codex, GitHub Copilot CLI) | ✅ | ✅ | Runs the agent you have installed, with your own account |
 | External directory diff, with tool setup | ✅ | ✅ | The app saves the tool in its own settings, not Git's config |
 | Blame | ✅ | ❌ | |
 | Browse a revision's files | ✅ | ❌ | |
@@ -196,12 +199,12 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | Open by dropping a folder, `sidereal [folder]`, or a start screen with recent repositories | ❌ | ✅ | |
 | Follows the theme | ✅ | ✅ | The app follows system light/dark, or the theme set in Settings |
 | Settings | ✅ | ✅ | The app has its own Settings dialog |
-| Automatic updates | ✅ | ✅ | The installed Windows app and the AppImage update themselves from GitHub releases; the macOS app and the Windows zip say when one is out |
+| Automatic updates | ✅ | ✅ | The Windows app and the AppImage update themselves from GitHub releases; the macOS app says when one is out |
 | Linux | ✅ | ✅ | The app is an x64 AppImage |
 
-## About this repository
+## License
 
-This repository holds Sidereal's [issue tracker](https://github.com/ZacheryGlass/sidereal/issues), [discussions](https://github.com/ZacheryGlass/sidereal/discussions), [changelog](CHANGELOG.md), [releases](https://github.com/ZacheryGlass/sidereal/releases) (the extension's VSIX and the standalone app's downloads) and images. Sidereal's source code is private.
+Free for personal and internal business use. Proprietary; see LICENSE.txt and ThirdPartyNotices.txt in the extension's folder, or **Help > License** and **Help > Third-Party Notices** in the standalone app.
 
 ## License
 
