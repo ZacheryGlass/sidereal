@@ -202,9 +202,9 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | Automatic updates | ✅ | ✅ | The Windows app and the AppImage update themselves from GitHub releases; the macOS app says when one is out |
 | Linux | ✅ | ✅ | The app is an x64 AppImage |
 
-## License
+## About this repository
 
-Free for personal and internal business use. Proprietary; see LICENSE.txt and ThirdPartyNotices.txt in the extension's folder, or **Help > License** and **Help > Third-Party Notices** in the standalone app.
+This repository holds Sidereal's [issue tracker](https://github.com/ZacheryGlass/sidereal/issues), [discussions](https://github.com/ZacheryGlass/sidereal/discussions), [changelog](CHANGELOG.md), [releases](https://github.com/ZacheryGlass/sidereal/releases) (the extension's VSIX and the standalone app's downloads) and images. Sidereal's source code is private.
 
 ## License
 
