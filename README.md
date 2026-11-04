@@ -10,7 +10,7 @@ A free Git graph, log and file history, modeled on TortoiseGit's log view, with 
 
 - **Free.** Every feature, for personal and business use. There is no paid tier.
 - **No account.** Nothing to sign in to.
-- **No ads, no telemetry.** Sidereal makes no network requests of its own: the only network traffic comes from the Git commands you start, such as fetch, pull and push, the AI agent you choose for **Resolve with AI** (and the standalone app's check for updates).
+- **No ads, no telemetry.** Sidereal makes no network requests of its own: the only network traffic comes from the Git commands you start, such as fetch, pull and push, the AI agent you choose for **Resolve with AI** and **Write with AI** (and the standalone app's check for updates).
 - **Maintained.** Fixes and features ship regularly; the [changelog](https://github.com/ZacheryGlass/sidereal/blob/main/CHANGELOG.md) lists every release.
 - **Built for large histories.** Commits stream in as `git log` runs and only the visible rows are drawn. On a 100,000-commit repository the first 5,000 commits show in about half a second ([benchmark](https://github.com/ZacheryGlass/sidereal/blob/main/media/benchmark.json)).
 
@@ -44,11 +44,12 @@ Drag and drop: rest on a target to preview the result, then choose what to do ([
 
 ## Features
 
-- **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the header row stays in view while scrolling, and runs of commits are collapsed by default.
-- **Commit details** beside or below the list: changed files, diffs, file history, blame, git notes and `git describe`.
+- **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the controls and the header row stay in view while scrolling, and runs of commits are collapsed by default.
+- **Commit details** beside or below the list: changed files (as a list sortable by name or lines changed, or a tree of folders, with a filter), diffs, file history, blame, git notes and `git describe`.
 - **Commit form** for the working tree changes: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
 - **Git actions**: checkout, branch, merge, rebase, cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Merge, rebase, cherry-pick and revert each open a dialog listing the commits they apply, and any rebase can be reordered, reworded or squashed before it runs. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away. Drag a branch label onto a commit or branch to rebase it there, or onto the checked-out branch to merge it; drag commits onto the checked-out branch to cherry-pick them ([see it](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)).
 - **Resolve with AI**: when a merge, rebase or cherry-pick stops on conflicts, hand the files to Claude Code, Codex or GitHub Copilot CLI, whichever you have installed and signed in to. Each file it settles is marked as resolved, and for a rebase it can continue through each later commit to the end.
+- **Write with AI**: the sparkle beside the commit form's summary writes the commit message of the staged changes with the agent you have installed, running it read-only, in the style of the repository's recent commits.
 - **Filters**: path, author, message, SHA, refs, date range and revision range, plus first-parent, no-merges, follow-renames and a compressed graph. Jump between merges.
 - **Worktrees**: see which branches other worktrees have checked out, create a worktree from any branch or commit, open it in a new window, the current window or its own Sidereal tab, and move uncommitted changes between worktrees.
 - **Submodules** nested under their parent repository. A pointer change shows its commit range and opens the submodule's history for it; out-of-date submodules have an inline **Update**.
@@ -69,7 +70,7 @@ Git Graph's open feature requests that Sidereal already covers:
 | Request | Upvotes | Sidereal |
 |---|---|---|
 | [Filter the graph by file or folder (#70)](https://github.com/mhutchie/vscode-git-graph/issues/70) | 78 | **Paths** in the filter panel |
-| [Keep the header visible while scrolling (#132)](https://github.com/mhutchie/vscode-git-graph/issues/132) | 33 | The header row stays in view |
+| [Keep the header visible while scrolling (#132)](https://github.com/mhutchie/vscode-git-graph/issues/132) | 33 | The controls and the header row stay in view |
 | [Display git notes (#475)](https://github.com/mhutchie/vscode-git-graph/issues/475) | 19 | Notes in the commit details, and a filter that searches them |
 | [Create and apply patches (#538)](https://github.com/mhutchie/vscode-git-graph/issues/538) | 17 | **Generate Patches** and **Apply Patches...** |
 
@@ -86,6 +87,12 @@ VS Code's built-in Source Control Graph shows commits, branches, and incoming or
 - The graph is TortoiseGit's Show Log: the same Graph, Actions, Message, Author and Date columns, the same reference label colors, and the **All Branches**, **Show Whole Project**, **Walk Behavior** and **View** controls below the list.
 - Your `.tgitconfig` bugtraq settings link issues in commit messages, once you allow them for the repository.
 - Branch, merge, rebase, cherry-pick, revert, reset, stash, tag, patch and reflog actions are in the same right-click menus.
+
+## Coming from Git Extensions
+
+- **Pull**, **Push**, **Commit** and **Stash** are next to the Branches dropdown, in the same order. The arrow beside Pull has **Pull - merge**, **Pull - rebase**, **Fetch**, **Fetch all**, **Fetch and prune all** and **Set default Pull button action**.
+- The same shortcuts: Ctrl+Space commits, Ctrl+Up pushes, Ctrl+Down pulls, Ctrl+Shift+Down fetches, Ctrl+Alt+Up and Ctrl+Alt+Down stash and pop.
+- Git Extensions runs only on Windows. Sidereal also runs on macOS and Linux, as an app or in VS Code.
 
 ## FAQ
 
@@ -166,7 +173,7 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | Feature | VS Code | Standalone | Notes |
 |---|:-:|:-:|---|
 | **Graph and views** | | | |
-| Commit graph: streaming load, header row stays in view, collapsed runs | ✅ | ✅ | |
+| Commit graph: streaming load, controls and header row stay in view, collapsed runs | ✅ | ✅ | |
 | A tab per repository | ✅ | ✅ | |
 | Repos dropdown | ✅ | ✅ | |
 | Filters: path, author, message, SHA, refs, dates, ranges | ✅ | ✅ | |
@@ -179,6 +186,7 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | Open a file at a revision | ✅ | ✅ | The app opens a temporary copy in the file's default app |
 | Conflicted files | ✅ | ✅ | The app opens them in your merge tool |
 | Resolve conflicts with an AI agent (Claude Code, Codex, GitHub Copilot CLI) | ✅ | ✅ | Runs the agent you have installed, with your own account |
+| Write commit messages with an AI agent (Claude Code, Codex, GitHub Copilot CLI) | ✅ | ✅ | Runs the agent you have installed, read-only |
 | External directory diff, with tool setup | ✅ | ✅ | The app saves the tool in its own settings, not Git's config |
 | Blame | ✅ | ❌ | |
 | Browse a revision's files | ✅ | ❌ | |
