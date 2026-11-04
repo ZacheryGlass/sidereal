@@ -4,6 +4,11 @@
 
 - **Standalone app**: the new **Feedback** section of Settings (or **Help > Send Feedback...**) sends a bug report, an idea or other feedback from inside the app, without a GitHub account. It is filed privately with Sidereal's version and your operating system, and nothing about your repositories. Add an email address if you'd like a reply.
 
+## 1.8.1 - 2026-11-04
+
+- In a VS Code window that updated Sidereal from 1.7 without reloading, choosing a style in **Label Colors...** failed with "not a registered configuration": the window didn't know the new label settings yet. The dialog now waits for a reload before opening by itself, and choosing a style offers **Reload Window** instead of failing.
+- In VS Code themes that don't color the edges of text fields (such as Light+ and Dark+), the commit form's summary and description, **Filter messages** and Sidereal's other text fields have a border, in the color of the dropdowns' border. Before, they had none, and on a background of their own color they couldn't be seen.
+
 ## 1.8.0 - 2026-11-04
 
 - Ticking **Amend Last Commit** in the commit form lists the last commit's changes under **Staged Changes** together with the staged ones, as the amended commit will have them. Unstaging a file there leaves it out of the amended commit, keeping its change in the working tree, and its diff compares with the commit before the last. It also fills in the last commit's message when you had typed a message already, and unticking it brings back what you had typed. Before, it filled in the message only into empty fields, and the list showed only the staged changes.
