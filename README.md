@@ -44,12 +44,12 @@ Drag and drop: rest on a target to preview the result, then choose what to do ([
 
 ## Features
 
-- **Commit graph** in an editor tab per repository, or in the bottom panel. Commits stream in as they load, the controls and the header row stay in view while scrolling, and runs of commits are collapsed by default.
-- **Commit details** beside or below the list: changed files (as a list sortable by name or lines changed, or a tree of folders, with a filter), diffs, file history, blame, git notes and `git describe`.
-- **Commit form** for the working tree changes: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
+- **Commit graph** in an editor tab per repository. Commits stream in as they load, the controls and the header row stay in view while scrolling, and runs of commits are collapsed by default.
+- **Commit details** beside or below the list: changed files (as a list with each file's status, sortable by name, status or lines changed, or a tree of folders, with a filter), diffs, file history, blame, git notes and `git describe`.
+- **Commit form** for the working tree changes, with untracked files listed apart from the changes to tracked ones: stage or unstage files one by one or all at once, write a summary and description, amend the last commit or add a Signed-off-by, then **Commit** or **Commit & Push**.
 - **Git actions**: checkout, branch, merge, rebase, cherry-pick, revert, reset, tag, stash, notes, push, pull and fetch. Merge, rebase, cherry-pick and revert each open a dialog listing the commits they apply, and any rebase can be reordered, reworded or squashed before it runs. Patches can be generated and applied; branches and tags have managers; the reflog is one menu away. Drag a branch label onto a commit or branch to rebase it there, or onto the checked-out branch to merge it; drag commits onto the checked-out branch to cherry-pick them ([see it](https://github.com/ZacheryGlass/sidereal/blob/main/docs/drag-and-drop.md)).
-- **Resolve with AI**: when a merge, rebase or cherry-pick stops on conflicts, hand the files to Claude Code, Codex or GitHub Copilot CLI, whichever you have installed and signed in to. Each file it settles is marked as resolved, and for a rebase it can continue through each later commit to the end.
-- **Write with AI**: the sparkle beside the commit form's summary writes the commit message of the staged changes with the agent you have installed, running it read-only, in the style of the repository's recent commits.
+- **Resolve with AI**: when a merge, rebase or cherry-pick stops on conflicts, hand the files to Claude Code, Codex or GitHub Copilot CLI, whichever you have installed and signed in to. Each file it settles is marked as resolved, and for a rebase it can continue through each later commit to the end. Settings can add instructions of your own to what the agent is told.
+- **Write with AI**: the sparkle beside the commit form's summary writes the commit message of the staged changes with the agent you have installed, running it read-only, in the style of the repository's recent commits, or as instructions of your own in Settings say (such as "Use Conventional Commits.").
 - **Filters**: path, author, message, SHA, refs, date range and revision range, plus first-parent, no-merges, follow-renames and a compressed graph. Jump between merges.
 - **Worktrees**: see which branches other worktrees have checked out, create a worktree from any branch or commit, open it in a new window, the current window or its own Sidereal tab, and move uncommitted changes between worktrees.
 - **Submodules** nested under their parent repository. A pointer change shows its commit range and opens the submodule's history for it; out-of-date submodules have an inline **Update**.
@@ -91,7 +91,7 @@ VS Code's built-in Source Control Graph shows commits, branches, and incoming or
 ## Coming from Git Extensions
 
 - **Pull**, **Push**, **Commit** and **Stash** are next to the Branches dropdown, in the same order. The arrow beside Pull has **Pull - merge**, **Pull - rebase**, **Fetch**, **Fetch all**, **Fetch and prune all** and **Set default Pull button action**.
-- The same shortcuts: Ctrl+Space commits, Ctrl+Up pushes, Ctrl+Down pulls, Ctrl+Shift+Down fetches, Ctrl+Alt+Up and Ctrl+Alt+Down stash and pop.
+- The same shortcuts: Ctrl+Space commits, Ctrl+Up pushes, Ctrl+Down pulls, Ctrl+Shift+Down fetches, Ctrl+Alt+Up and Ctrl+Alt+Down stash and pop. The standalone app lets you change them in **Settings > Keyboard Shortcuts**.
 - Git Extensions runs only on Windows. Sidereal also runs on macOS and Linux, as an app or in VS Code.
 
 ## FAQ
@@ -134,7 +134,7 @@ Yes. Install it from [Open VSX](https://open-vsx.org/extension/zglass/sidereal),
 
 ## Getting started
 
-Run **Sidereal: Open Sidereal View** from the Command Palette, or click a branch in the Sidereal side bar, which lists branches, remotes, tags, stashes, worktrees and submodules. The graph opens in an editor tab; set **Sidereal: Open In** to **Panel** to open it in the bottom panel instead.
+Run **Sidereal: Open Sidereal View** from the Command Palette, or click a branch in the Sidereal side bar, which lists branches, remotes, tags, stashes, worktrees and submodules. The graph opens in an editor tab.
 
 ### Tabs and repositories
 
@@ -149,7 +149,6 @@ Run **Sidereal: Open Sidereal View** from the Command Palette, or click a branch
 
 | Setting | Default | Description |
 |---|---|---|
-| `sidereal.openIn` | `Editor Tab` | Where the graph opens: `Editor Tab` or `Panel` (the bottom panel). |
 | `sidereal.graph.branchColors` | theme colors | Colors of the graph's branch lines. |
 | `sidereal.referenceLabels.showAheadBehind` | `true` | Show how far each branch is ahead of or behind its upstream. |
 | `sidereal.commitDetails.describe` | `All Tags` | Which references describe a commit in its details. |
@@ -177,7 +176,6 @@ Sidereal also runs without VS Code, as an app for macOS 12 or later (Apple silic
 | A tab per repository | ✅ | ✅ | |
 | Repos dropdown | ✅ | ✅ | |
 | Filters: path, author, message, SHA, refs, dates, ranges | ✅ | ✅ | |
-| Graph in the bottom panel | ✅ | ❌ | |
 | Side bar with branches, remotes, tags, stashes, worktrees, submodules | ✅ | ❌ | The app shows these only in the graph |
 | **Commit details** | | | |
 | Changed files, git notes, `git describe` | ✅ | ✅ | |
