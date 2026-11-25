@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.13.1 - 2026-11-25
+
+- The pencil that edits a commit's message shows only on commits that were never pushed, whichever branches the view shows. Before, a view of the checked out branch alone, or of some branches, gave it also to commits pushed to a remote branch the view left out, and a click then only said that the commit was pushed. Where the commits shown can't tell which were pushed, the view now asks Git, in the background, so the rows never wait for it. The pencil therefore shows also while remote branches or a remote are hidden, where it was left out before.
+
 ## 1.13.0 - 2026-11-25
 
 - **Refresh** (the button and F5) keeps the view as it is while it loads: the **Working tree changes** row, the commits and the open details stay on screen until the new ones arrive, and the Refresh button spins meanwhile. Before, a refresh emptied the view first, and the working tree changes came back only once Git had listed the commits, which takes long in a large repository, so they looked lost.
